@@ -77,4 +77,15 @@ describe('setting properties', function () {
 
     assert.ok(_c === 1, 'the number of calls is correct')
   })
+
+  it('reports objects in arrays in objects', function () {
+    let orig = [{ b: { c: [1, { prop: 'yay' }] } }]
+    let _c = 0
+    let obj = atom(orig, function () {
+      assert.ok(true, `it has been called ${++_c} times`)
+    })
+    obj[0].b.c[1] = 'woohoo'
+
+    assert.ok(_c === 1, 'the number of calls is correct')
+  })
 })
