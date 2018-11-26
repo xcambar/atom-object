@@ -6,21 +6,26 @@ This library provides with a small interface to help developers deal with nested
 
 ## Before and after
 
-```
+```js
 // before
+
 let state = { greeting: { standard: "hello" } }
 state.greeting.standard = "hi"
+
 // With basic constructs, how do you get to know, just by looking at `state`
 // that it has been updated? You can't.
 ```
 
-```
+```js
 // now
+
 let callback = function(obj, key, value) {
   console.log(`Update on key ${key} with value ${value}`)
 }
+
 let state = atom({ greeting: { standard: "hello" } }, callback)
 state.greeting.standard = "hi"
+
 // logs "Update on key greeting.standard with value hi"
 ```
 
