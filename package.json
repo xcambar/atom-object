@@ -1,6 +1,6 @@
 {
   "name": "atom-object",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Plain JS objects mutations with style",
   "main": "index.js",
   "scripts": {
